@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tambah Siswa</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Form Tambah Siswa</h1>
+
+    <form th:action="@{/siswa/simpan}" th:object="${siswa}" method="post">
+        <label for="nis">NIS:</label>
+        <input type="number" id="nis" th:field="*{nis}" required><br><br>
+
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" th:field="*{nama}" required><br><br>
+
+        <label for="alamat">Alamat:</label>
+        <textarea id="alamat" th:field="*{alamat}" rows="3"></textarea><br><br>
+
+        <label for="jurusan">Jurusan:</label>
+        <input type="text" id="jurusan" th:field="*{jurusan}"><br><br>
+
+        <label>Jenis Kelamin:</label>
+        <input type="radio" th:field="*{jenisKelamin}" value="L" id="lk">
+        <label for="lk">Laki-laki</label>
+        <input type="radio" th:field="*{jenisKelamin}" value="P" id="pr">
+        <label for="pr">Perempuan</label><br><br>
+
+        <label for="tanggalLahir">Tanggal Lahir:</label>
+        <input type="date" id="tanggalLahir" th:field="*{tanggalLahir}"><br><br>
+
+        <label for="tahunMasuk">Tahun Masuk:</label>
+        <input type="date" id="tahunMasuk" th:field="*{tahunMasuk}"><br><br>
+
+        <button type="submit">Simpan</button>
+        <a href="/siswa"><button type="button">Kembali</button></a>
+    </form>
+</body>
+</html>
