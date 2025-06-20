@@ -8,7 +8,7 @@
     <h1>Daftar Siswa</h1>
 
     <a th:href="@{/siswa/add-siswa}">Tambah Siswa</a>
-
+   
     <table border="1">
         <thead>
             <tr>
@@ -31,7 +31,9 @@
                 <td th:text="${s.tahunMasuk}">Tahun masuk</td>
                 <td>
                     <a th:href="@{'/siswa/delete/' + ${s.id}}">Hapus</a>
+                     <a th:href="@{/siswa/edit-siswa/{id}(id=${s.id})}">Edit</a>
                 </td>
+
             </tr>
         </tbody>
     </table>

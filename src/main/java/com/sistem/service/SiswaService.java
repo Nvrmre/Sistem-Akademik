@@ -1,10 +1,13 @@
 package com.sistem.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.sistem.model.SiswaModel;
 import com.sistem.repository.SiswaRepository;
@@ -20,14 +23,12 @@ public class SiswaService {
         return siswaRepository.findAll();
     }
 
-     public SiswaModel getSiswaById(Long id){
-        return siswaRepository.findById(id).orElse(null);
+     public Optional <SiswaModel> getSiswaById(Long id){
+        return siswaRepository.findById(id);
     }
 
     public SiswaModel deleteSiswa(Long id){
-
         SiswaModel siswa = siswaRepository.findById(id).orElse(null);
-
         if (siswa != null){
             siswaRepository.deleteById(id);
         }
@@ -35,6 +36,12 @@ public class SiswaService {
     }
 
     public SiswaModel addSiswa(SiswaModel siswa){
+        return siswaRepository.save(siswa);
+    }
+
+  
+
+    public SiswaModel update(SiswaModel siswa){
         return siswaRepository.save(siswa);
     }
 }

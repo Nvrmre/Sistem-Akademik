@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Data Siswa</title>
+</head>
+<body>
+    <h2>Edit Siswa</h2>
+    <form th:action="@{/siswa/update}" th:object="${siswa}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        
+        <label>Nama:</label>
+        <input type="text" th:field="*{nama}" /><br/>
+
+        <label>NIS:</label>
+        <input type="text" th:field="*{nis}" /><br/>
+
+        <label>Kelas:</label>
+        <input type="text" th:field="*{kelas}" /><br/>
+
+        <label>Alamat:</label>
+        <input type="text" th:field="*{alamat}" /><br/>
+
+        <button type="submit">Simpan Perubahan</button>
+    </form>
+</body>
+</html>

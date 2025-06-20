@@ -41,12 +41,25 @@ public class SiswaController {
         return "redirect:/siswa";
     }
 
-
-
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         siswaService.deleteSiswa(id);
         return "redirect:/siswa";
     }
 
+    @GetMapping("/edit-siswa/{id}")
+     public String showFormEdit(@PathVariable Long id, Model model){
+        SiswaModel siswa = siswaService.getSiswaById(id)
+            .orElseThrow(() -> new RuntimeException("siswa tidak ditemukan"));
+        model.addAttribute("siswa", siswa);
+        return "siswa/edit-siswa";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute SiswaModel siswa){
+        siswaService.update(siswa);
+        return "redirect:/siswa";
+    }
+
+   
 }
