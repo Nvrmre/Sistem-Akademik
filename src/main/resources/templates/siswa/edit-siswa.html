@@ -19,6 +19,21 @@
 
         <label>Alamat:</label>
         <input type="text" th:field="*{alamat}" /><br/>
+        
+        <label for="jurusan">Jurusan:</label>
+        <input type="text" id="jurusan" th:field="*{jurusan}"><br><br>
+
+        <label>Jenis Kelamin:</label>
+        <input type="radio" th:field="*{jenisKelamin}" value="L" id="lk">
+        <label for="lk">Laki-laki</label>
+        <input type="radio" th:field="*{jenisKelamin}" value="P" id="pr">
+        <label for="pr">Perempuan</label><br><br>
+
+        <label for="tanggalLahir">Tanggal Lahir:</label>
+        <input type="date" id="tanggalLahir" th:field="*{tanggalLahir}"><br><br>
+
+        <label for="tahunMasuk">Tahun Masuk:</label>
+        <input type="date" id="tahunMasuk" th:field="*{tahunMasuk}"><br><br>
 
         <button type="submit">Simpan Perubahan</button>
     </form>

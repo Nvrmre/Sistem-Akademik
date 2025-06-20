@@ -18,6 +18,9 @@ public class SiswaModel {
     @Column(name = "nama")
     private String nama;
 
+    @Column(name = "kelas")
+    private String kelas;
+
     @Column(name = "alamat")
     private String alamat;
 

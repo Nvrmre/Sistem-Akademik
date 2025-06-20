@@ -14,6 +14,7 @@
             <tr>
                 <th>NIS</th>
                 <th>Nama</th>
+                <th>Kelas</th>
                 <th>Jenis Kelamin</th>
                 <th>Alamat</th>
                 <th>Jurusan</th>
@@ -25,10 +26,12 @@
             <tr th:each="s : ${siswa}">
                 <td th:text="${s.nis}">NIS</td>
                 <td th:text="${s.nama}">Nama</td>
+                <td th:text="${s.kelas}">Kelas</td>
                 <td th:text="${s.jenisKelamin}">JK</td>
                 <td th:text="${s.alamat}">Alamat</td>
                 <td th:text="${s.jurusan}">Jurusan</td>
                 <td th:text="${s.tahunMasuk}">Tahun masuk</td>
+
                 <td>
                     <a th:href="@{'/siswa/delete/' + ${s.id}}">Hapus</a>
                      <a th:href="@{/siswa/edit-siswa/{id}(id=${s.id})}">Edit</a>
