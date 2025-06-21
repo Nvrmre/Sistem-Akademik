@@ -1,0 +1,34 @@
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru</title>
+</head>
+<body>
+    <a th:href="@{/guru/add-guru}">Tambah</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>NIP</th>
+                <th>Nama</th>
+                <th>Mata Pelajaran</th>
+                <th>Email</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="g : ${guru}">
+                <td th:text="${g.nip}">NIP</td>
+                <td th:text="${g.nama}">Nama</td>
+                <td th:text="${g.mata_pelajaran}">Mata Pelajaran</td>
+                <td th:text="${g.email}">Email</td>
+                <td>
+                    <a th:href="@{guru/delete/{id}(id = ${g.id})}">Hapus</a>
+                    <a th:href="@{guru/edit-guru/{id} (id = ${g.id})}">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
