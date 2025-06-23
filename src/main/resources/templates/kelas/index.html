@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Kelas</th>
+                <th>Jurusan</th>
+                <th>Angkatan</th>
+                <th>Wali Kelas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="k : ${kelas}">
+                <td th:text="${k.tingkat}">Kelas</td>
+                <td th:text="${k.jurusan}">Jurusan</td>
+                <td th:text="${k.tahun_masuk}">Angkatan</td>
+                <td th:text="${k.guru_id}">Wali Kelas</td>
+
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
