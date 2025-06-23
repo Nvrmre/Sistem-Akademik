@@ -9,18 +9,24 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "kelas")
 public class KelasModel {
+
+   
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
-    @Column(name="guru_id")
-    private Long guru_id;
+    @ManyToOne
+    @JoinColumn(name="guru_id", referencedColumnName = "id")
+    private GuruModel guru;
 
     @Column(name = "jurusan")
     private String jurusan;
@@ -28,14 +34,18 @@ public class KelasModel {
     @Column (name ="tingkat")
 
     @Enumerated(EnumType.STRING)
-    private tingkat tingkat;
+    private Tingkat tingkat;
 
-    public enum tingkat{
+    public enum Tingkat{
         X,
         XI,
         XII
     }
-//=========GETTER AND SETTER==============
+    @Column(name="tahun_ajaran")
+    private String tahun_ajaran;
+
+
+    //=========GETTER AND SETTER==============
     public Long getId() {
         return id;
     }
@@ -44,13 +54,6 @@ public class KelasModel {
         this.id = id;
     }
 
-    public Long getGuru_id() {
-        return guru_id;
-    }
-
-    public void setGuru_id(Long guru_id) {
-        this.guru_id = guru_id;
-    }
 
     public String getJurusan() {
         return jurusan;
@@ -60,15 +63,27 @@ public class KelasModel {
         this.jurusan = jurusan;
     }
 
-    public tingkat getTingkat() {
+    public Tingkat getTingkat() {
         return tingkat;
     }
 
-    public void setTingkat(tingkat tingkat) {
+    public void setTingkat(Tingkat tingkat) {
         this.tingkat = tingkat;
     }
+    public String getTahun_ajaran() {
+        return tahun_ajaran;
+    }
 
+    public void setTahun_ajaran(String tahun_ajaran) {
+        this.tahun_ajaran = tahun_ajaran;
+    }
 
+    public GuruModel getGuru(){
+        return guru;
+    }
     
+    public void setGuru(GuruModel guru){
+        this.guru = guru;
+    }
 
 }

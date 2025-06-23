@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add-kelas</title>
+</head>
+<body>
+    <form th:action="@{/kelas/simpan}" th:object="${kelas}" method="post">
+        <label for="tingkat">Kelas : </label>
+        <select id="tingkat" th:field="*{tingkat}">
+            <option value=""> -- Kelas -- </option>
+            <option  th:each="t : ${listTingkat}" th:value="${t}" th:text="${t}"></option>
+        </select>
+
+        <label for="jurusan">Jurusan : </label>
+        <input type="text" id="jurusan" th:field="*{jurusan}">
+
+        <label for="tahun_ajaran">Tahun : </label>
+        <input type="text" id="tahun_ajaran" th:field="*{tahun_ajaran}">
+
+        <label for="guru">Wali Kelas : </label>
+        <select th:field="*{guru_id}">
+            <option value="">-- Wali kelas --</option>
+            <option th:each="g : ${daftarGuru}"  th:value="${g.id}" th:text="${g.nama}"></option>
+        </select>
+
+        <button type="submit">simpan</button>
+
+    </form>
+     <a th:href="@{/kelas/index}"><button>Kembali</button></a>
+    
+</body>
+</html>
