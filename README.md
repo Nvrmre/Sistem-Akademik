@@ -1,8 +1,8 @@
 # HOW TO RUN
-install jdk and maven
+must install jdk and maven
 
-# BUILD 
+### BUILD 
 mvn spring-boot:run
 
-# RUN TAILWIND
+### RUN TAILWIND
 npm run build:css
