@@ -20,7 +20,7 @@
         <input type="text" id="tahun_ajaran" th:field="*{tahun_ajaran}">
 
         <label for="guru">Wali Kelas : </label>
-        <select th:field="*{guru_id}">
+        <select th:field="*{guru}">
             <option value="">-- Wali kelas --</option>
             <option th:each="g : ${daftarGuru}"  th:value="${g.id}" th:text="${g.nama}"></option>
         </select>

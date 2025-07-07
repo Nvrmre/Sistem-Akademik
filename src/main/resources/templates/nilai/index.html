@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilai</title>
+</head>
+<body>
+    <a th:href="@{nilai/add-nilai}">Input Nilai siswa</a>
+
+    <table>
+    <thead>
+        <tr>
+            <th>NAMA SISWA</th>
+            <th>KELAS</th>
+            <th>JURUSAN</th>
+            <th>NILAI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="n : ${nilai}">
+            <td th:text="${n.siswa != null ? n.siswa.nama : 'siswa tidak ditemukan' }">nama siswa</td>
+        </tr>
+    </tbody>    
+</table>
+    
+</body>
+</html>

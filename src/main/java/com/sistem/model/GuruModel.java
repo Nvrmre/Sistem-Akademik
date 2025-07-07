@@ -1,6 +1,6 @@
 package com.sistem.model;
 
-import java.time.LocalDateTime;
+// import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

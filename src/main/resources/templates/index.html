@@ -1,14 +1,36 @@
-<html lang="en" xmlns="www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beranda Akademik</title>
+  <link rel="stylesheet" th:href="@{/css/output.css}" />
 </head>
-<body>
-    <a th:href="@{/siswa}">Siswa</a><br><br>
-    <a th:href="@{/guru}">Guru</a><br><br>
-    <a th:href="@{/kelas}">Kelas</a><br><br>
-    <h1>Hellow world</h1>
-    
+<body class="bg-gray-50 font-sans text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white border-b shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="text-xl font-bold text-gray-800">Sistem Akademik</div>
+      <div class="flex space-x-6">
+        <a th:href="@{/siswa}" class="text-gray-600 hover:text-blue-600 transition">Siswa</a>
+        <a th:href="@{/guru}" class="text-gray-600 hover:text-blue-600 transition">Guru</a>
+        <a th:href="@{/kelas}" class="text-gray-600 hover:text-blue-600 transition">Kelas</a>
+        <a th:href="@{/nilai}" class="text-gray-600 hover:text-blue-600 transition">Nilai</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Konten -->
+  <main class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <h1 class="text-3xl font-semibold text-gray-800 mb-4">Selamat Datang</h1>
+    <p class="text-gray-500">Silakan pilih menu di atas untuk mengelola data akademik.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-400 py-6 border-t">
+    &copy; 2025 Sistem Akademik. All rights reserved.
+  </footer>
+
 </body>
 </html>

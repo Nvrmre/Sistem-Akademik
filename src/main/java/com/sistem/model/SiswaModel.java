@@ -36,6 +36,10 @@ public class SiswaModel {
     @Column (name = "tahun_masuk")
     private LocalDate tahunMasuk;
 
+    @ManyToOne
+    @JoinColumn(name = "nilai", referencedColumnName = "id")
+    private NilaiModel nilai;
+
     @Column (name = "jenis_kelamin")
     @Enumerated(EnumType.STRING)
     private JenisKelamin jenisKelamin;
